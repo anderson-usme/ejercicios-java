@@ -1,0 +1,12 @@
+# Ejercicios de Clase LPL
+
+Este repositorio contiene los ejercicios de programación en Java
+
+## Estructura del proyecto
+- `/src` - Código fuente principal
+- `/ejercicios` - Ejercicios individuales
+- `/lib` - Librerías externas
+
+## Tecnologías
+- Java
+- Git
