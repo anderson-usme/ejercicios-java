@@ -49,11 +49,13 @@ public class CajeroModular {
             System.out.println("Entrada inválida. Ingresa un número.");
             sc.next();
         }
-        return sc.nextInt();
+        int opcion = sc.nextInt();
+        sc.next(); // Cambié nextLine() por next() - limpia el ENTER
+        return opcion;
     }
 
     public static void consultarSaldo(Scanner sc, double saldo) {
-        sc.nextLine(); // limpiar buffer
+        sc.next(); // Cambié nextLine() por next() - espera ENTER para continuar
         System.out.println("Tu saldo actual es: $" + saldo);
     }
 
@@ -68,10 +70,10 @@ public class CajeroModular {
                 sc.next();
             }
             retiro = sc.nextDouble();
-            sc.nextLine();
+            sc.next(); // Cambié nextLine() por next() - limpia ENTER
 
             System.out.print("Confirmas retirar $" + retiro + "? (S/N): ");
-            char conf = sc.nextLine().charAt(0);
+            char conf = sc.next().charAt(0); // Cambié nextLine() por next()
             if (conf == 'S' || conf == 's') {
                 confirmado = true;
             }
@@ -98,10 +100,10 @@ public class CajeroModular {
                 sc.next();
             }
             deposito = sc.nextDouble();
-            sc.nextLine();
+            sc.next(); // Cambié nextLine() por next() - limpia ENTER
 
             System.out.print("Confirmas depositar $" + deposito + "? (S/N): ");
-            char conf = sc.nextLine().charAt(0);
+            char conf = sc.next().charAt(0); // Cambié nextLine() por next()
             if (conf == 'S' || conf == 's') {
                 confirmado = true;
             }
@@ -124,10 +126,10 @@ public class CajeroModular {
                 sc.next();
             }
             transferencia = sc.nextDouble();
-            sc.nextLine();
+            sc.next(); // Cambié nextLine() por next() - limpia ENTER
 
             System.out.print("Confirmas transferir $" + transferencia + "? (S/N): ");
-            char conf = sc.nextLine().charAt(0);
+            char conf = sc.next().charAt(0); // Cambié nextLine() por next()
             if (conf == 'S' || conf == 's') {
                 confirmado = true;
             }
@@ -146,15 +148,15 @@ public class CajeroModular {
     }
 
     public static boolean confirmarSalida(Scanner sc) {
-        sc.nextLine(); // limpiar buffer
+        sc.next(); // Cambié nextLine() por next() - limpia buffer
         System.out.print("¿Estás seguro de que deseas salir? (S/N): ");
-        char conf = sc.nextLine().charAt(0);
+        char conf = sc.next().charAt(0); // Cambié nextLine() por next()
         if (conf == 'S' || conf == 's') {
             System.out.println("Gracias por usar el cajero. ¡Hasta pronto!");
-            return false; // detener el bucle
+            return false;
         } else {
             System.out.println("Operación cancelada. Regresando al menú...");
-            return true; // continuar
+            return true;
         }
     }
 }
