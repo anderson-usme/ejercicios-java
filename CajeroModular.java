@@ -34,7 +34,7 @@ public class CajeroModular {
         sc.close();
     }
 
-    // === MÉTODOS ===
+
 
     public static int mostrarMenu(Scanner sc) {
         System.out.println("\n=== CAJERO AUTOMÁTICO ===");
@@ -50,12 +50,12 @@ public class CajeroModular {
             sc.next();
         }
         int opcion = sc.nextInt();
-        sc.next(); // Cambié nextLine() por next() - limpia el ENTER
+        sc.next(); 
         return opcion;
     }
 
     public static void consultarSaldo(Scanner sc, double saldo) {
-        sc.next(); // Cambié nextLine() por next() - espera ENTER para continuar
+        sc.next();
         System.out.println("Tu saldo actual es: $" + saldo);
     }
 
@@ -70,10 +70,10 @@ public class CajeroModular {
                 sc.next();
             }
             retiro = sc.nextDouble();
-            sc.next(); // Cambié nextLine() por next() - limpia ENTER
+            sc.next(); 
 
             System.out.print("Confirmas retirar $" + retiro + "? (S/N): ");
-            char conf = sc.next().charAt(0); // Cambié nextLine() por next()
+            char conf = sc.next().charAt(0);
             if (conf == 'S' || conf == 's') {
                 confirmado = true;
             }
@@ -100,10 +100,10 @@ public class CajeroModular {
                 sc.next();
             }
             deposito = sc.nextDouble();
-            sc.next(); // Cambié nextLine() por next() - limpia ENTER
+            sc.next(); 
 
             System.out.print("Confirmas depositar $" + deposito + "? (S/N): ");
-            char conf = sc.next().charAt(0); // Cambié nextLine() por next()
+            char conf = sc.next().charAt(0);
             if (conf == 'S' || conf == 's') {
                 confirmado = true;
             }
@@ -126,10 +126,10 @@ public class CajeroModular {
                 sc.next();
             }
             transferencia = sc.nextDouble();
-            sc.next(); // Cambié nextLine() por next() - limpia ENTER
+            sc.next(); 
 
             System.out.print("Confirmas transferir $" + transferencia + "? (S/N): ");
-            char conf = sc.next().charAt(0); // Cambié nextLine() por next()
+            char conf = sc.next().charAt(0);
             if (conf == 'S' || conf == 's') {
                 confirmado = true;
             }
@@ -148,9 +148,9 @@ public class CajeroModular {
     }
 
     public static boolean confirmarSalida(Scanner sc) {
-        sc.next(); // Cambié nextLine() por next() - limpia buffer
+        sc.next(); 
         System.out.print("¿Estás seguro de que deseas salir? (S/N): ");
-        char conf = sc.next().charAt(0); // Cambié nextLine() por next()
+        char conf = sc.next().charAt(0); 
         if (conf == 'S' || conf == 's') {
             System.out.println("Gracias por usar el cajero. ¡Hasta pronto!");
             return false;
